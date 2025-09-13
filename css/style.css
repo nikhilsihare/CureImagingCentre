@@ -243,3 +243,64 @@ footer { background: #2c3e50; color: white; text-align: center; padding: 10px; }
   font-size: 20px;
   margin: 10px 0;
 }
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;   /* stack items */
+    align-items: center;
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  .hero-content {
+    max-width: 100%;          /* let text take full width */
+  }
+
+  .appointment-box {
+    width: 100%;              /* make aside full width */
+    margin-top: 20px;
+  }
+
+  .appointment-box .aside-image img {
+    height: auto;             /* let image resize naturally */
+    max-height: 500px;        /* optional: limit image height */
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;        /* just below navbar */
+    right: 0;
+    background: #2c3e50;
+    width: 100%;
+    padding: 0;
+    display: none;    /* hidden by default */
+    z-index: 1000;
+  }
+
+  .navbar nav ul.show {
+    display: flex;    /* visible when toggled */
+  }
+
+  .navbar nav ul li a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    margin-right: 5px;
+  }
+}
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
